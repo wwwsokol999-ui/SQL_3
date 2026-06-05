@@ -47,18 +47,18 @@ EXPLAIN ANALYZE
 
 Для ускорения выполнения запроса был создан индекс:
 
-```
+```sq;
 CREATE INDEX idx_payment_payment_date
 ON payment(payment_date);
 ```
 После создания индекса запрос был выполнен повторно с использованием:
-```
+```sql
 EXPLAIN ANALYZE
 ```
 Результат оптимизации
 
 После создания индекса сервер начал использовать:
-```
+```sql
 
 Index Range Scan on p using idx_payment_payment_date
 ```
